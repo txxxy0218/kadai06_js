@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!-- jQuery CDN -->
+    <script type="module" src="js/script.js"></script> <!-- ベースのJS -->
+    <script type="module" src="js/firebase-script.js"></script> <!-- Firebase連携関連 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>NOMAD Taxation</title>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html">NOMAD Taxation</a></div>
+        <nav>
+            <a href="step3.html"><i class="fa-solid fa-magnifying-glass"></i>納税地診断</a>
+            <a href=""><i class="fa-regular fa-heart"></i>お気に入り</a>
+            <a href=""><i class="fa-regular fa-message"></i>メッセージ</a>
+            <a href=""><img src="img/avater.png" alt="" id="avater"></a>
+        </nav>
+    </header>
+
+    <div class="section">
+        <div class="left" id="img-screen">
+        </div>
+        <div class="right">
+            <div class="step-bar">
+                <a href="step3.html" class="back"><i class="fa-solid fa-arrow-left"></i>戻る</a>
+                <div class="border">
+                </div>
+                <div class="one done">
+                    <div class="num-container">
+                        <p class="num">1</p>
+                    </div>
+                    <h5 class="label">基本情報</h5>
+                </div>
+                <div class="two done">
+                    <div class="num-container">
+                        <p class="num">2</p>
+                    </div>
+                    <h5 class="label">収入について</h5>
+                </div>
+                <div class="three done">
+                    <div class="num-container">
+                        <p class="num">3</p>
+                    </div>
+                    <h5 class="label">資産について</h5>
+                </div>
+                <div class="four now">
+                    <div class="num-container">
+                        <p class="num">4</p>
+                    </div>
+                    <h5 class="label">生活について</h5>
+                </div>
+                <div class="four will">
+                    <div class="num-container">
+                        <p class="num">5</p>
+                    </div>
+                    <h5 class="label">確認</h5>
+                </div>
+            </div>
+            <div class="form">
+                <form action="">
+                    <div class="question">
+                        <div class="overseas-travel sub-section">
+                            <h4 class="sub-header">海外渡航・滞在</h4>
+                            <p>今年1年の(日本を含む)滞在(予定)国と滞在日数を教えてください。</p>
+                            <div id="q-ot-1">
+                                <label class="selectbox-3">
+                                    <p>滞在(予定)国</p>
+                                    <select id="country-of-stay-1" name="country">
+                                        <option value="アンドラ公国">アンドラ公国</option>
+                                        <option value="アラブ首長国連邦">アラブ首長国連邦</option>
+                                        <option value="アフガニスタン・イスラム国">アフガニスタン・イスラム国</option>
+                                        <option value="アンチグア・バーブーダ">アンチグア・バーブーダ</option>
+                                        <option value="アンギラ">アンギラ</option>
+                                        <option value="アルバニア共和国">アルバニア共和国</option>
+                                        <option value="アルメニア共和国">アルメニア共和国</option>
+                                        <option value="オランダ領アンチル">オランダ領アンチル</option>
+                                        <option value="アンゴラ共和国">アンゴラ共和国</option>
+                                        <option value="南極">南極</option>
+                                        <option value="アルゼンチン共和国">アルゼンチン共和国</option>
+                                        <option value="米領サモア">米領サモア</option>
+                                        <option value="オーストリア共和国">オーストリア共和国</option>
+                                        <option value="オーストラリア">オーストラリア</option>
+                                        <option value="アルバ">アルバ</option>
+                                        <option value="アゼルバイジャン共和国">アゼルバイジャン共和国</option>
+                                        <option value="ボスニア・ヘルツェゴビナ共和国">ボスニア・ヘルツェゴビナ共和国</option>
+                                        <option value="バルバドス">バルバドス</option>
+                                        <option value="バングラデシュ人民共和国">バングラデシュ人民共和国</option>
+                                        <option value="ベルギー王国">ベルギー王国</option>
+                                        <option value="ブルキナファソ">ブルキナファソ</option>
+                                        <option value="ブルガリア共和国">ブルガリア共和国</option>
+                                        <option value="バーレーン国">バーレーン国</option>
+                                        <option value="ブルンジ共和国">ブルンジ共和国</option>
+                                        <option value="ベナン共和国">ベナン共和国</option>
+                                        <option value="バーミューダ諸島">バーミューダ諸島</option>
+                                        <option value="ブルネイ・ダルサラーム国">ブルネイ・ダルサラーム国</option>
+                                        <option value="ボリビア共和国">ボリビア共和国</option>
+                                        <option value="ブラジル連邦共和国">ブラジル連邦共和国</option>
+                                        <option value="バハマ国">バハマ国</option>
+                                        <option value="ブータン王国">ブータン王国</option>
+                                        <option value="ブーベ島">ブーベ島</option>
+                                        <option value="ボツワナ共和国">ボツワナ共和国</option>
+                                        <option value="ベラルーシ共和国">ベラルーシ共和国</option>
+                                        <option value="ベリーズ">ベリーズ</option>
+                                        <option value="カナダ">カナダ</option>
+                                        <option value="ココス諸島">ココス諸島</option>
+                                        <option value="中央アフリカ共和国">中央アフリカ共和国</option>
+                                        <option value="コンゴ共和国">コンゴ共和国</option>
+                                        <option value="スイス連邦">スイス連邦</option>
+                                        <option value="コートジボアール共和国">コートジボアール共和国</option>
+                                        <option value="クック諸島">クック諸島</option>
+                                        <option value="チリ共和国">チリ共和国</option>
+                                        <option value="カメルーン共和国">カメルーン共和国</option>
+                                        <option value="中華人民共和国">中華人民共和国</option>
+                                        <option value="コロンビア共和国">コロンビア共和国</option>
+                                        <option value="コスタリカ共和国">コスタリカ共和国</option>
+                                        <option value="キューバ共和国">キューバ共和国</option>
+                                        <option value="カーボベルデ共和国">カーボベルデ共和国</option>
+                                        <option value="クリスマス島">クリスマス島</option>
+                                        <option value="キプロス共和国">キプロス共和国</option>
+                                        <option value="チェコ共和国">チェコ共和国</option>
+                                        <option value="ドイツ連邦共和国">ドイツ連邦共和国</option>
+                                        <option value="ジブチ共和国">ジブチ共和国</option>
+                                        <option value="デンマーク王国">デンマーク王国</option>
+                                        <option value="ドミニカ国">ドミニカ国</option>
+                                        <option value="ドミニカ共和国">ドミニカ共和国</option>
+                                        <option value="アルジェリア民主人民共和国">アルジェリア民主人民共和国</option>
+                                        <option value="エクアドル共和国">エクアドル共和国</option>
+                                        <option value="エストニア共和国">エストニア共和国</option>
+                                        <option value="エジプト・アラブ共和国">エジプト・アラブ共和国</option>
+                                        <option value="西サハラ">西サハラ</option>
+                                        <option value="エリトリア">エリトリア</option>
+                                        <option value="スペイン">スペイン</option>
+                                        <option value="エチオピア">エチオピア</option>
+                                        <option value="フィンランド共和国">フィンランド共和国</option>
+                                        <option value="フィジー共和国">フィジー共和国</option>
+                                        <option value="フォークランド(マルビナス)諸島">フォークランド(マルビナス)諸島</option>
+                                        <option value="ミクロネシア連邦">ミクロネシア連邦</option>
+                                        <option value="フェロー諸島">フェロー諸島</option>
+                                        <option value="フランス共和国">フランス共和国</option>
+                                        <option value="フランス本国">フランス本国</option>
+                                        <option value="ガボン共和国">ガボン共和国</option>
+                                        <option value="グレートブリテン及び北部アイルランド連合王国">グレートブリテン及び北部アイルランド連合王国</option>
+                                        <option value="グレナダ">グレナダ</option>
+                                        <option value="グルジア共和国">グルジア共和国</option>
+                                        <option value="仏領ギアナ">仏領ギアナ</option>
+                                        <option value="ガーナ共和国">ガーナ共和国</option>
+                                        <option value="ジブラルタル">ジブラルタル</option>
+                                        <option value="グリーンランド">グリーンランド</option>
+                                        <option value="ガンビア共和国">ガンビア共和国</option>
+                                        <option value="ギニア共和国">ギニア共和国</option>
+                                        <option value="グアドループ島">グアドループ島</option>
+                                        <option value="赤道ギニア共和国">赤道ギニア共和国</option>
+                                        <option value="ギリシア共和国">ギリシア共和国</option>
+                                        <option value="南ジョージア島・南サンドイッチ諸島">南ジョージア島・南サンドイッチ諸島</option>
+                                        <option value="グアテマラ共和国">グアテマラ共和国</option>
+                                        <option value="グアム">グアム</option>
+                                        <option value="ギニアビサオ共和国">ギニアビサオ共和国</option>
+                                        <option value="ガイアナ協同共和国">ガイアナ協同共和国</option>
+                                        <option value="ホンコン">ホンコン</option>
+                                        <option value="ヘアド島・マクドナルド諸島">ヘアド島・マクドナルド諸島</option>
+                                        <option value="ホンジュラス共和国">ホンジュラス共和国</option>
+                                        <option value="クロアチア共和国">クロアチア共和国</option>
+                                        <option value="ハイチ共和国">ハイチ共和国</option>
+                                        <option value="ハンガリー共和国">ハンガリー共和国</option>
+                                        <option value="インドネシア共和国">インドネシア共和国</option>
+                                        <option value="アイルランド">アイルランド</option>
+                                        <option value="イスラエル国">イスラエル国</option>
+                                        <option value="インド">インド</option>
+                                        <option value="英領インド洋地域">英領インド洋地域</option>
+                                        <option value="イラク共和国">イラク共和国</option>
+                                        <option value="イラン・イスラム共和国">イラン・イスラム共和国</option>
+                                        <option value="アイスランド共和国">アイスランド共和国</option>
+                                        <option value="イタリア共和国">イタリア共和国</option>
+                                        <option value="ジャマイカ">ジャマイカ</option>
+                                        <option value="ヨルダン・ハシミテ王国">ヨルダン・ハシミテ王国</option>
+                                        <option value="日本" selected="selected">日本</option>
+                                        <option value="ケニア共和国">ケニア共和国</option>
+                                        <option value="キルギスタン共和国">キルギスタン共和国</option>
+                                        <option value="カンボディア王国">カンボディア王国</option>
+                                        <option value="キリバス共和国">キリバス共和国</option>
+                                        <option value="コモロ・イスラム連邦共和国">コモロ・イスラム連邦共和国</option>
+                                        <option value="セントクリストファー・ネイビス">セントクリストファー・ネイビス</option>
+                                        <option value="北朝鮮">北朝鮮</option>
+                                        <option value="大韓民国">大韓民国</option>
+                                        <option value="クウェート国">クウェート国</option>
+                                        <option value="ケイマン諸島">ケイマン諸島</option>
+                                        <option value="カザフスタン共和国">カザフスタン共和国</option>
+                                        <option value="ラオス人民民主共和国">ラオス人民民主共和国</option>
+                                        <option value="レバノン共和国">レバノン共和国</option>
+                                        <option value="セントルシア">セントルシア</option>
+                                        <option value="リヒテンシュタイン公国">リヒテンシュタイン公国</option>
+                                        <option value="スリランカ民主社会主義共和国">スリランカ民主社会主義共和国</option>
+                                        <option value="リベリア共和国">リベリア共和国</option>
+                                        <option value="レソト王国">レソト王国</option>
+                                        <option value="リトアニア共和国">リトアニア共和国</option>
+                                        <option value="ルクセンブルク大公国">ルクセンブルク大公国</option>
+                                        <option value="ラトビア共和国">ラトビア共和国</option>
+                                        <option value="社会主義人民リビア・アラブ国">社会主義人民リビア・アラブ国</option>
+                                        <option value="モロッコ王国">モロッコ王国</option>
+                                        <option value="モナコ公国">モナコ公国</option>
+                                        <option value="モルドバ共和国">モルドバ共和国</option>
+                                        <option value="マダガスカル共和国">マダガスカル共和国</option>
+                                        <option value="マーシャル諸島共和国">マーシャル諸島共和国</option>
+                                        <option value="マリ共和国">マリ共和国</option>
+                                        <option value="ミャンマー連邦">ミャンマー連邦</option>
+                                        <option value="モンゴル国">モンゴル国</option>
+                                        <option value="マカオ">マカオ</option>
+                                        <option value="北マリアナ諸島">北マリアナ諸島</option>
+                                        <option value="マルチニーク島">マルチニーク島</option>
+                                        <option value="モーリタニア・イスラム共和国">モーリタニア・イスラム共和国</option>
+                                        <option value="モントセラト">モントセラト</option>
+                                        <option value="マルタ共和国">マルタ共和国</option>
+                                        <option value="モーリシャス共和国">モーリシャス共和国</option>
+                                        <option value="モルジブ共和国">モルジブ共和国</option>
+                                        <option value="マラウイ共和国">マラウイ共和国</option>
+                                        <option value="メキシコ合衆国">メキシコ合衆国</option>
+                                        <option value="マレーシア">マレーシア</option>
+                                        <option value="モザンビーク共和国">モザンビーク共和国</option>
+                                        <option value="ナミビア共和国">ナミビア共和国</option>
+                                        <option value="ニューカレドニア">ニューカレドニア</option>
+                                        <option value="ニジェール共和国">ニジェール共和国</option>
+                                        <option value="ノーフォーク島">ノーフォーク島</option>
+                                        <option value="ナイジェリア連邦共和国">ナイジェリア連邦共和国</option>
+                                        <option value="ニカラグア共和国">ニカラグア共和国</option>
+                                        <option value="オランダ王国">オランダ王国</option>
+                                        <option value="ノルウェー王国">ノルウェー王国</option>
+                                        <option value="ネパール王国">ネパール王国</option>
+                                        <option value="ナウル共和国">ナウル共和国</option>
+                                        <option value="ニウエ">ニウエ</option>
+                                        <option value="ニュージーランド">ニュージーランド</option>
+                                        <option value="オマーン国">オマーン国</option>
+                                        <option value="パナマ共和国">パナマ共和国</option>
+                                        <option value="ペルー共和国">ペルー共和国</option>
+                                        <option value="仏領ポリネシア">仏領ポリネシア</option>
+                                        <option value="パプアニューギニア">パプアニューギニア</option>
+                                        <option value="フィリピン共和国">フィリピン共和国</option>
+                                        <option value="パキスタン・イスラム共和国">パキスタン・イスラム共和国</option>
+                                        <option value="ポーランド共和国">ポーランド共和国</option>
+                                        <option value="サンピエール島・ミクロン島">サンピエール島・ミクロン島</option>
+                                        <option value="ピトケアン島">ピトケアン島</option>
+                                        <option value="プエルトリコ">プエルトリコ</option>
+                                        <option value="ポルトガル共和国">ポルトガル共和国</option>
+                                        <option value="パラオ">パラオ</option>
+                                        <option value="パラグアイ共和国">パラグアイ共和国</option>
+                                        <option value="カタール国">カタール国</option>
+                                        <option value="レユニオン">レユニオン</option>
+                                        <option value="ルーマニア">ルーマニア</option>
+                                        <option value="ロシア連邦">ロシア連邦</option>
+                                        <option value="ルワンダ共和国">ルワンダ共和国</option>
+                                        <option value="サウジアラビア王国">サウジアラビア王国</option>
+                                        <option value="ソロモン諸島">ソロモン諸島</option>
+                                        <option value="セイシェル共和国">セイシェル共和国</option>
+                                        <option value="スーダン共和国">スーダン共和国</option>
+                                        <option value="スウェーデン王国">スウェーデン王国</option>
+                                        <option value="シンガポール共和国">シンガポール共和国</option>
+                                        <option value="セントヘレナ島">セントヘレナ島</option>
+                                        <option value="スロベニア共和国">スロベニア共和国</option>
+                                        <option value="スバールバル諸島・ヤンマイエン島">スバールバル諸島・ヤンマイエン島</option>
+                                        <option value="スロバキア共和国">スロバキア共和国</option>
+                                        <option value="シエラレオネ共和国">シエラレオネ共和国</option>
+                                        <option value="サンマリノ共和国">サンマリノ共和国</option>
+                                        <option value="セネガル共和国">セネガル共和国</option>
+                                        <option value="ソマリア民主共和国">ソマリア民主共和国</option>
+                                        <option value="スリナム共和国">スリナム共和国</option>
+                                        <option value="サントメ・プリンシペ民主共和国">サントメ・プリンシペ民主共和国</option>
+                                        <option value="エルサルバドル共和国">エルサルバドル共和国</option>
+                                        <option value="シリア・アラブ共和国">シリア・アラブ共和国</option>
+                                        <option value="スワジランド王国">スワジランド王国</option>
+                                        <option value="タークス諸島・カイコス諸島">タークス諸島・カイコス諸島</option>
+                                        <option value="チャド共和国">チャド共和国</option>
+                                        <option value="仏領極南諸島">仏領極南諸島</option>
+                                        <option value="トーゴ共和国">トーゴ共和国</option>
+                                        <option value="タイ王国">タイ王国</option>
+                                        <option value="タジキスタン共和国">タジキスタン共和国</option>
+                                        <option value="トケラウ諸島">トケラウ諸島</option>
+                                        <option value="トルクメニスタン">トルクメニスタン</option>
+                                        <option value="チュニジア共和国">チュニジア共和国</option>
+                                        <option value="トンガ王国">トンガ王国</option>
+                                        <option value="東チモール">東チモール</option>
+                                        <option value="トルコ共和国">トルコ共和国</option>
+                                        <option value="トリニダード・トバゴ共和国">トリニダード・トバゴ共和国</option>
+                                        <option value="ツバル">ツバル</option>
+                                        <option value="台湾">台湾</option>
+                                        <option value="タンザニア連合共和国">タンザニア連合共和国</option>
+                                        <option value="ウクライナ">ウクライナ</option>
+                                        <option value="ウガンダ共和国">ウガンダ共和国</option>
+                                        <option value="米領太平洋諸島">米領太平洋諸島</option>
+                                        <option value="アメリカ合衆国">アメリカ合衆国</option>
+                                        <option value="ウルグアイ東方共和国">ウルグアイ東方共和国</option>
+                                        <option value="ウズベキスタン共和国">ウズベキスタン共和国</option>
+                                        <option value="バチカン市国">バチカン市国</option>
+                                        <option value="セントビンセント及びグレナディーン諸島">セントビンセント及びグレナディーン諸島</option>
+                                        <option value="ベネズエラ共和国">ベネズエラ共和国</option>
+                                        <option value="英領バージン諸島">英領バージン諸島</option>
+                                        <option value="米領バージン諸島">米領バージン諸島</option>
+                                        <option value="ベトナム社会主義共和国">ベトナム社会主義共和国</option>
+                                        <option value="バヌアツ共和国">バヌアツ共和国</option>
+                                        <option value="ワリス・フテュナ諸島">ワリス・フテュナ諸島</option>
+                                        <option value="西サモア">西サモア</option>
+                                        <option value="イエメン共和国">イエメン共和国</option>
+                                        <option value="マイヨット島">マイヨット島</option>
+                                        <option value="ユーゴスラビア連邦共和国">ユーゴスラビア連邦共和国</option>
+                                        <option value="南アフリカ共和国">南アフリカ共和国</option>
+                                        <option value="ザンビア共和国">ザンビア共和国</option>
+                                        <option value="ザイール共和国">ザイール共和国</option>
+                                        <option value="ジンバブエ共和国">ジンバブエ共和国</option>
+                                    </select>
+                                    </label>
+                                    <label for="">
+                                        <p>年収</p>
+                                        <input id="fam-income-1" type="text" placeholder="年収を入力してください">
+                                    </label>
+                                </div>
+                                <button class="add-button" id="fc-add"><i class="fa-solid fa-plus"></i>扶養家族を追加する</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <a href="index.html" id="save4" class="subtle">一時保存する</a>
+                        <a href="confirmation.html" id="send4" class="primary">次に進む</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="xs">2024 - NOMAD Taxation</p>
+    </footer>
+    
+</body>
+</html>

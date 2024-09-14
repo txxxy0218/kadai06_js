@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!-- jQuery CDN -->
+    <script type="module" src="js/script.js"></script> <!-- ベースのJS -->
+    <script type="module" src="js/firebase-script.js"></script> <!-- Firebase連携関連 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>NOMAD Taxation</title>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html">NOMAD Taxation</a></div>
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-magnifying-glass"></i>納税地診断</a>
+            <a href=""><i class="fa-regular fa-heart"></i>お気に入り</a>
+            <a href=""><i class="fa-regular fa-message"></i>メッセージ</a>
+            <a href=""><img src="img/avater.png" alt="" id="avater"></a>
+        </nav>
+    </header>
+
+    <div class="section">
+        <div class="info-container">
+            <div class="left-info">
+                <div class="basic-info">
+                    <div class="category-head">
+                        <h3>基本情報</h3>
+                        <a href="step1.html" class="edit">編集する</a>
+                    </div>
+                    <div class="answer">
+                        <p class="item-name">国籍</p>
+                        <p id="nationality-answer">国籍の答えが入るよ</p>
+                    </div>
+                    <div class="answers-row-container">
+                        <div class="answer">
+                            <p class="item-name">居住国</p>
+                            <p id="country-answer">居住国の答えが入るよ</p>
+                        </div>
+                        <div class="answer">
+                            <p class="item-name">ビザの種類</p>
+                            <p id="visa-answer">ビザの種類の答えが入るよ</p>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <p class="item-name">職業</p>
+                        <p id="job-answer">職業の答えが入るよ</p>
+                    </div>
+                </div>
+
+                <div class="income-info">
+                    <div class="category-head">
+                        <h3>収入について</h3>
+                        <a href="step2.html" class="edit">編集する</a>
+                    </div>
+                    <div class="subcategory">
+                        <h4>事業収入</h4>
+                        <div class="business-answers answers-row-container">
+                                <div class="answer">
+                                    <p class="item-name">事業の種類</p>
+                                    <p id="b-name-answer">事業の種類の答えが入るよ</p>
+                                </div>
+                                <div class="answer">
+                                    <p class="item-name">事業を行なっている国</p>
+                                    <p id="b-country-answer">事業を行なっている国の答えが入るよ</p>
+                                </div>
+                                <div class="answer">
+                                    <p class="item-name">収入の発生源の国</p>
+                                    <p id="b-income-country-answer">収入の発生源の国の答えが入るよ</p>
+                                </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="subcategory">
+                        <h4>給与収入</h4>
+                        <div class="saraly-answers answers-row-container">
+                            <div class="answer">
+                                <p class="item-name">勤務している会社が所在している国</p>
+                                <p id="s-country-answer">勤務している会社が所在している国の答えが入るよ</p>
+                            </div>
+                            <div class="answer">
+                                <p class="item-name">支払われる通貨</p>
+                                <p id="s-currency-answer">支払われる通貨の答えが入るよ</p>
+                            </div>
+                            <div class="answer">
+                                <p class="item-name">源泉徴収はされていますか？</p>
+                                <p id="withholding-tax-answer">はい/いいえ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-info">
+                <div class="assets-info">
+                    <div class="category-head">
+                        <h3>資産について</h3>
+                        <a href="step3.html" class="edit">編集する</a>
+                    </div>
+                    <div class="subcategory">
+                        <h4>不動産</h4>
+                        <div class="real-estate-answers">
+                            <div class="answer">
+                                <p class="item-name">不動産を所有していますか？</p>
+                                <p id="re-have-answer">はい/いいえ</p>
+                            </div>
+                            <div class="answers-row-container">
+                                <div class="answer">
+                                    <p class="item-name">不動産を所有している国</p>
+                                    <p id="re-country-answer">不動産を所有している国の答えが入るよ</p>
+                                </div>
+                                <div class="answer">
+                                    <p class="item-name">不動産の種類</p>
+                                    <p id="re-name-answer">不動産の種類の答えが入るよ</p>
+                                </div>
+                                <div class="answer">
+                                    <p class="item-name">不動産から得られる収入はありますか？</p>
+                                    <p id="re-income-answer">はい/いいえ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="subcategory">
+                        <h4>金融資産</h4>
+                        <div class="financial-answers answers-row-container">
+                            <div class="answer">
+                                <p class="item-name">銀行口座を持っている国</p>
+                                <p id="f-bank-country-answer">銀行口座を持っている国の答えが入るよ</p>
+                            </div>
+                            <div class="answer">
+                                <p class="item-name">口座の種類</p>
+                                <p id="f-bank-type-answer">口座の種類の答えが入るよ</p>
+                            </div>
+                            <div class="answer">
+                                <p class="item-name">口座残高</p>
+                                <p id="f-bank-balance-answer">口座残高の答えが入るよ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="subcategory">
+                        <h4>有形資産</h4>
+                        <div class="tangible-assets-answers">
+                            <div class="answer">
+                                <p class="item-name">有形資産を所有していますか？</p>
+                                <p id="ta-have-answer">はい/いいえ</p>
+                            </div>
+                            <div class="answers-row-container">
+                                <div class="answer">
+                                    <p class="item-name">有形資産の種類</p>
+                                    <p id="ta-type-answer">有形資産の種類の答えが入るよ</p>
+                                </div>
+                                <div class="answer">
+                                    <p class="item-name">有形資産を所有している国</p>
+                                    <p id="ta-country-answer">有形資産を所有している国の答えが入るよ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="life-info">
+                    <div class="category-head">
+                        <h3>生活について</h3>
+                        <a href="step4.html" class="edit">編集する</a>
+                    </div>
+                    <div class="subcategory">
+                        <h4>海外渡航・滞在</h4>
+                        <div class="overseas-travel-answer answers-row-container">
+                            <div class="answer">
+                                <p class="item-name">滞在(予定)国</p>
+                                <p id="ot-country-answer">滞在(予定)国の答えが入るよ</p>
+                            </div>
+                            <div class="answer">
+                                <p class="item-name">滞在(予定)日数</p>
+                                <p id="ot-term-answer">滞在(予定)日数の答えが入るよ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="subcategory">
+                        <h4>世帯構成</h4>
+                        <div class="family-composition-answers">
+                            <div class="answer">
+                                <p class="item-name">扶養家族はいますか？</p>
+                                <p id="fc-have-answer">はい/いいえ</p>
+                            </div>
+                            <div class="answers-row-container">
+                                <div class="answer">
+                                    <p class="item-name">続柄</p>
+                                    <p id="fc-type-answer">続柄の答えが入るよ</p>
+                                </div>
+                                <div class="answer">
+                                    <p class="item-name">居住地</p>
+                                    <p id="fc-country-answer">居住地の答えが入るよ</p>
+                                </div>
+                                <div class="answer">
+                                    <p class="item-name">年収</p>
+                                    <p id="fc-income-answer">年収の答えが入るよ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <a href="result.html"><button id="diagnose" class="primary">納税地を診断する</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="xs">2024 - NOMAD Taxation</p>
+    </footer>
+    
+</body>
+</html>

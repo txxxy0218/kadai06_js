@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!-- jQuery CDN -->
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://cdn.skypack.dev/@google/generative-ai"
+          }
+        }
+    </script>
+    <script type="module" src="js/script.js"></script> <!-- ベースのJS -->
+    <script type="module" src="js/firebase-script.js"></script> <!-- Firebase連携関連 -->
+    <script type="module" src="js/gemini-script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>NOMAD Taxation</title>
+</head>
+
+
+<body>
+    <header>
+        <div class="logo"><a href="index.html">NOMAD Taxation</a></div>
+        <nav>
+            <a href="index.html"><i class="fa-solid fa-magnifying-glass"></i>納税地診断</a>
+            <a href=""><i class="fa-regular fa-heart"></i>お気に入り</a>
+            <a href=""><i class="fa-regular fa-message"></i>メッセージ</a>
+            <a href=""><img src="img/avater.png" alt="" id="avater"></a>
+        </nav>
+    </header>
+
+    <div class="results">
+        <h2>納税地診断の結果</h2>
+        <div class="result-statement">
+            <h3>診断の結果、あなたの納税地は<span id="country-result">国の名前が入るよ</span>です</h3>
+        </div>
+        <div class="judge-container">
+            <div class="result">
+                <h3>居住地の判定</h3>
+                <p id="residence-judge">ここにAIが考えた居住地の判定結果が入るよ</p>
+            </div>
+            <div class="result">
+                <h3>収入の判定</h3>
+                <p id="income-judge">ここにAIが考えた居住地の判定結果が入るよ</p>
+            </div>
+            <div class="result">
+                <h3>資産の判定</h3>
+                <p id="assets-judge">ここにAIが考えた居住地の判定結果が入るよ</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="knowledge">
+        <h2>あなたに必要な納税の知識</h2>
+        <div class="knowledge-container">
+            <div class="must">
+                <h3>今後の対応</h3>
+                <p id="must">ここにAIが考えた居住地の判定結果が入るよ</p>
+            </div>
+            <div class="caution">
+                <h3>日本の税務上の注意点</h3>
+                <p id="caution">ここにAIが考えた居住地の判定結果が入るよ</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="recommend">
+        <h2>あなたにおすすめの税理士</h2>
+        <div class="accountants">
+            <i class="fa-regular fa-circle-left"></i>
+            <div class="accountant">
+                <div class="accountant-info">
+                    <a href=""><img src="img/avater.png" alt="" id="accountant-icon"></a>
+                    <div class="">
+                        <h4>伊藤 純也</h4>
+                        <p class="small">伊藤純也税理士事務所</p>
+                        <a href="" class="small hash">#カナダ</a>
+                    </div>
+                </div>
+                <p id="">ここに税理士の自己紹介が入るよ</p>
+            </div>
+            <div class="accountant">
+                <div class="accountant-info">
+                    <a href=""><img src="img/avater.png" alt="" id="accountant-icon"></a>
+                    <div class="">
+                        <h4>伊藤 純也</h4>
+                        <p class="small">伊藤純也税理士事務所</p>
+                        <a href="" class="small hash">#カナダ</a>
+                    </div>
+                </div>
+                <p id="">ここに税理士の自己紹介が入るよ</p>
+            </div>
+            <div class="accountant">
+                <div class="accountant-info">
+                    <a href=""><img src="img/avater.png" alt="" id="accountant-icon"></a>
+                    <div class="">
+                        <h4>伊藤 純也</h4>
+                        <p class="small">伊藤純也税理士事務所</p>
+                        <a href="" class="small hash">#カナダ</a>
+                    </div>
+                </div>
+                <p id="">ここに税理士の自己紹介が入るよ</p>
+            </div>
+            <i class="fa-regular fa-circle-right"></i>
+        </div>
+    </div>
+
+    <footer>
+        <p class="xs">2024 - NOMAD Taxation</p>
+    </footer>
+    
+</body>
+</html>
